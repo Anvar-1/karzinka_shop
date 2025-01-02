@@ -49,10 +49,10 @@ class MainView(APIView):
         return Response(serializer.data)
 
 
-    # def delete(self, request, pk):
-    #     object = self.get_object(pk)
-    #     object.delete()
-    #     return Response(status=status.HTTP_204_NO_CONTENT)
+    def delete(self, request, pk):
+        product = self.get_object(pk)
+        product.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
 
 
 class MainApiView(APIView):
